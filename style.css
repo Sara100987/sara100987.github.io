@@ -41,21 +41,21 @@ header .logo {
     height: 110px;
 }
 
-/* Espaçamento entre os links de navegação */
+/* Espaçamento responsivo entre os links de navegação */
 .nav-links {
     flex: 1;
     display: flex;
     justify-content: center;
-    gap: 200px; /* Espaçamento entre os links */
+    gap: 20px; /* Espaçamento padrão para telas pequenas */
 }
 
 header ul {
     list-style: none;
     display: flex;
-    gap: 200px; 
+    gap: 20px;
     margin: 0;
     padding: 0;
-    font-size: x-large;
+    font-size: larger;
 }
 
 header ul li a {
@@ -67,6 +67,25 @@ header ul li a {
 
 header ul li a:hover {
     color: #402A18;
+}
+
+/* Media Queries para responsividade do espaçamento */
+@media (min-width: 768px) {
+    .nav-links {
+        gap: 50px; /* Espaçamento para tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        gap: 100px; /* Espaçamento para desktops */
+    }
+}
+
+@media (min-width: 1440px) {
+    .nav-links {
+        gap: 150px; /* Espaçamento para telas maiores */
+    }
 }
 
 /* Footer Styling */
