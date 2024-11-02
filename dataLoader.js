@@ -1,83 +1,50 @@
-document.addEventListener("DOMContentLoaded", function() {
-    if (document.getElementById('menuItems')) {
-        loadMenuItems();
-    }
-    if (document.getElementById('branchInfo')) {
-        loadBranchInfo();
-    }
-    if (document.getElementById('contactFormSection')) {
-        loadContactForm();
-    }
-});
-
-// Função para enviar o formulário com alerta
-function submitForm(event) {
-    event.preventDefault();
-    alert("Thank you for reaching out! Your message has been sent.");
-    document.getElementById("contactForm").reset();
-}
-
-// Função para carregar informações de Branch
-function loadBranchInfo() {
-    fetch('branches.xml')
-        .then(response => response.text())
-        .then(data => {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(data, "application/xml");
-            const branches = xml.getElementsByTagName('branch');
-            const container = document.getElementById('branchInfo');
-            container.innerHTML = '';
-
-            Array.from(branches).forEach(branch => {
-                const address = branch.getElementsByTagName('address')[0].textContent;
-                const contact = branch.getElementsByTagName('contact')[0].textContent;
-                const hours = branch.getElementsByTagName('hours')[0].textContent;
-                const mapLink = branch.getElementsByTagName('mapLink')[0].textContent;
-
-                container.innerHTML += `
-                    <div class="branch">
-                        <h3>${address}</h3>
-                        <p>Contact: ${contact}</p>
-                        <p>Hours: ${hours}</p>
-                        <a href="${mapLink}" target="_blank">View on Map</a>
-                    </div>
-                `;
-            });
-        })
-        .catch(error => console.error('Error loading the branch XML:', error));
-}
-
-// Função para carregar o Formulário de Contato
-function loadContactForm() {
-    fetch('branches.xml')
-        .then(response => response.text())
-        .then(data => {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(data, "application/xml");
-            const fields = xml.getElementsByTagName('field');
-            const button = xml.getElementsByTagName('button')[0];
-
-            let formHTML = '<form id="contactForm" onsubmit="submitForm(event)">';
-
-            Array.from(fields).forEach(field => {
-                const type = field.getElementsByTagName('type')[0].textContent;
-                const id = field.getElementsByTagName('id')[0].textContent;
-                const name = field.getElementsByTagName('name')[0].textContent;
-                const placeholder = field.getElementsByTagName('placeholder')[0].textContent;
-                const required = field.getElementsByTagName('required')[0].textContent === 'true' ? 'required' : '';
-
-                if (type === 'textarea') {
-                    formHTML += `<textarea id="${id}" name="${name}" placeholder="${placeholder}" ${required}></textarea>`;
-                } else {
-                    formHTML += `<input type="${type}" id="${id}" name="${name}" placeholder="${placeholder}" ${required}>`;
-                }
-            });
-
-            formHTML += `<button type="${button.getElementsByTagName('type')[0].textContent}">${button.getElementsByTagName('text')[0].textContent}</button>`;
-            formHTML += '</form>';
-            formHTML += '<div id="messageSent" style="display:none;">Thank you for your message. It has been sent.</div>';
-
-            document.getElementById('contactFormSection').innerHTML = formHTML;
-        })
-        .catch(error => console.error('Error loading the form XML:', error));
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+<menu>
+    <category type="Meals">
+        <item id="1" name="Beetroot and Feta Salad" price="15.00">
+            <description>Suitable for vegetarians, made with fresh beetroot.</description>
+            <image>jpg/beetroot_salad.jpg</image>
+        </item>
+        <item id="2" name="Sourdough Rye Sandwich" price="18.00">
+            <description>Cheese and salad sandwich made with organic sourdough rye bread.</description>
+            <image>jpg/rye_sandwich.jpg</image>
+        </item>
+        <item id="3" name="Spinach Pie and Salad" price="20.00">
+            <description>Tasty pie with fresh spinach and side salad.</description>
+            <image>jpg/spinach_pie.jpg</image>
+        </item>
+        <item id="4" name="Feta Pancakes with Salad" price="19.50">
+            <description>Pancakes filled with feta, served with a fresh salad.</description>
+            <image>jpg/feta_pancakes.jpg</image>
+        </item>
+    </category>
+    <category type="Beverages">
+        <item id="5" name="Coffee / hot chocolates - Small" price="3.50">
+            <description>For coffee, please inform the staff of the coffee type.</description>
+            <image>jpg/coffee_small.jpg</image>
+        </item>
+        <item id="6" name="Coffee / hot chocolates - Regular" price="4.00">
+            <description>For coffee, please inform the staff of the coffee type.</description>
+            <image>jpg/coffee_regular.jpg</image>
+        </item>
+        <item id="7" name="Coffee / hot chocolates - Large" price="4.50">
+            <description>For coffee, please inform the staff of the coffee type.</description>
+            <image>jpg/coffee_large.jpg</image>
+        </item>
+    </category>
+    <category type="Other Beverages">
+        <item id="9" name="Soda" price="3.00">
+            <description>Refreshing soda to quench your thirst.</description>
+            <image>jpg/soda.jpg</image>
+        </item>
+        <item id="10" name="Fresh Juice" price="6.00">
+            <description>Freshly squeezed juice with no added sugar.</description>
+            <image>jpg/fresh_juice.jpg</image>
+        </item>
+        <item id="11" name="Bottled Water" price="2.00">
+            <description>Pure bottled water to keep you hydrated.</description>
+            <image>jpg/bottled_water.jpg</image>
+        </item>
+    </category>
+</menu>
