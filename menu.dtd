@@ -1,7 +1,0 @@
-<!ELEMENT menu (category+)>
-<!ELEMENT category (item+)>
-<!ATTLIST category type CDATA #REQUIRED>
-<!ELEMENT item (description, image)>
-<!ATTLIST item id ID #REQUIRED name CDATA #REQUIRED price CDATA #REQUIRED>
-<!ELEMENT description (#PCDATA)>
-<!ELEMENT image (#PCDATA)>
