@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+<menu>
+    <category type="Meals">
+        <item id="m1" name="Beetroot and Feta Salad" price="15.00">
+            <description>Suitable for vegetarians, made with fresh beetroot.</description>
+            <image>jpg/beetroot_salad.jpg</image>
+        </item>
+        <item id="m2" name="Sourdough Rye Sandwich" price="18.00">
+            <description>Cheese and salad sandwich made with organic sourdough rye bread.</description>
+            <image>jpg/rye_sandwich.jpg</image>
+        </item>
+        <item id="m3" name="Spinach Pie and Salad" price="20.00">
+            <description>Tasty pie with fresh spinach and side salad.</description>
+            <image>jpg/spinach_pie.jpg</image>
+        </item>
+        <item id="m4" name="Feta Pancakes with Salad" price="19.50">
+            <description>Pancakes filled with feta, served with a fresh salad.</description>
+            <image>jpg/feta_pancakes.jpg</image>
+        </item>
+    </category>
+    <category type="Beverages">
+        <item id="m5" name="Coffee / hot chocolates - Small" price="3.50">
+            <description>For coffee, please inform the staff of the coffee type.</description>
+            <image>jpg/coffee_small.jpg</image>
+        </item>
+        <item id="m6" name="Coffee / hot chocolates - Regular" price="4.00">
+            <description>For coffee, please inform the staff of the coffee type.</description>
+            <image>jpg/coffee_regular.jpg</image>
+        </item>
+        <item id="m7" name="Coffee / hot chocolates - Large" price="4.50">
+            <description>For coffee, please inform the staff of the coffee type.</description>
+            <image>jpg/coffee_large.jpg</image>
+        </item>
+    </category>
+    <category type="Other Beverages">
+        <item id="m8" name="Soda" price="3.00">
+            <description>Refreshing soda to quench your thirst.</description>
+            <image>jpg/soda.jpg</image>
+        </item>
+        <item id="m9" name="Fresh Juice" price="6.00">
+            <description>Freshly squeezed juice with no added sugar.</description>
+            <image>jpg/fresh_juice.jpg</image>
+        </item>
+        <item id="m10" name="Bottled Water" price="2.00">
+            <description>Pure bottled water to keep you hydrated.</description>
+            <image>jpg/bottled_water.jpg</image>
+        </item>
+    </category>
+</menu>

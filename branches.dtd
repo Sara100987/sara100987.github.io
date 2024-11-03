@@ -1,0 +1,20 @@
+<!ELEMENT branches (branch*, form)>
+<!ELEMENT branch (address, contact, hours, mapLink)>
+<!ATTLIST branch
+    id ID #REQUIRED>
+
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT contact (#PCDATA)>
+<!ELEMENT hours (#PCDATA)>
+<!ELEMENT mapLink (#PCDATA)>
+
+<!ELEMENT form (field*, button)>
+<!ELEMENT field (type, id, name, placeholder, required)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT placeholder (#PCDATA)>
+<!ELEMENT required (#PCDATA)> 
+
+<!ELEMENT button (type, text)>
+<!ELEMENT text (#PCDATA)>

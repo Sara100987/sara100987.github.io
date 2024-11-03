@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE branches SYSTEM "branches.dtd">
+<branches>
+    <branch id="b1">
+        <address>76 Devonshire St, Surry Hills NSW</address>
+        <contact>02 9211 1234</contact>
+        <hours>Mon - Fri: 6:00 to 14:30, Sat-Sun: 7:00 to 15:00</hours>
+        <mapLink>https://maps.app.goo.gl/6jo6qiMK8HBdufHq8</mapLink>
+    </branch>
+    <branch id="b2">
+        <address>451 Pitt St, Haymarket Sydney, NSW</address>
+        <contact>02 9262 5678</contact>
+        <hours>Mon - Fri: 6:00 to 16:00, Sat-Sun: 7:00 to 15:00</hours>
+        <mapLink>https://maps.app.goo.gl/93JteyTqa9GzPwv48</mapLink>
+    </branch>
+    <branch id="b3">
+        <address>31 Alfred Street, Circular Quay, NSW</address>
+        <contact>02 8971 9101</contact>
+        <hours>Mon - Fri: 6:00 to 16:00, Sat-Sun: 7:00 to 15:00</hours>
+        <mapLink>https://maps.app.goo.gl/skBTt8rWZfEUah5U9</mapLink>
+    </branch>
+    
+    <!-- Formulario de Contato -->
+    <form>
+        <field>
+            <type>text</type>
+            <id>firstName</id>
+            <name>firstName</name>
+            <placeholder>First Name</placeholder>
+            <required>true</required> 
+        </field>
+        <field>
+            <type>text</type>
+            <id>lastName</id>
+            <name>lastName</name>
+            <placeholder>Last Name</placeholder>
+            <required>true</required>
+        </field>
+        <field>
+            <type>email</type>
+            <id>email</id>
+            <name>email</name>
+            <placeholder>Email</placeholder>
+            <required>true</required>
+        </field>
+        <field>
+            <type>text</type>
+            <id>subject</id>
+            <name>subject</name>
+            <placeholder>Subject</placeholder>
+            <required>true</required>
+        </field>
+        <field>
+            <type>textarea</type>
+            <id>message</id>
+            <name>message</name>
+            <placeholder>Your message</placeholder>
+            <required>true</required>
+        </field>
+        <button>
+            <type>submit</type>
+            <text>Send</text>
+        </button>
+    </form>
+</branches>
